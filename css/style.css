@@ -1,0 +1,716 @@
+/* Lo 1ero que haremos es aplicar un reset general, con esto eliminamos elementos que estan seteado por defecto en los navegadores */
+* { /* con asterisco damos a entender todos los elementos, lo que siempre estemos llamando 1ero antes de abrir los corchetes se llama selector */
+    margin: 0; /* llamamos a la propiedad margen (las propiedades son en color azul) y luego le damos un valor (color naranja) */
+    padding: 0; 
+    box-sizing: border-box;
+}   /* con asterisco damos a entender todos los elementos */
+
+body {
+    background-color: #f9f9f9;
+} /*Llamamos al body que va a contener toda nuestra pagina y llamamos a background-color, escribimos white por que cuando hicimos nuestro wireframe nosotros ya habiamos decidido que sea blanco el fondo  */
+
+/* Navbar */
+nav {
+    background: #C18E41;
+}/* Aca hacemos lo mismo que en body y le damos el color que habiamos decidido , ambas sirven para lo mismo */
+
+.navbar.navbar-expand-lg .navbar-nav .nav-link {
+    color: white; /* Cambiar el color del texto a blanco */
+    font-family: 'Rubik', sans-serif; /* con font-family cambiamos la fuente que viene por defecto a la que queremos usar, previamente nosotros habiamos inyectado la fuente en el head del archivo html */
+}
+
+.navbar.navbar-expand-lg .navbar-nav .nav-link:hover {
+    color: rgb(0, 0, 0); /* Cambiar el color del texto a blanco */
+    font-family: 'Rubik', sans-serif; /* con font-family cambiamos la fuente que viene por defecto a la que queremos usar, previamente nosotros habiamos inyectado la fuente en el head del archivo html */
+}
+
+.navbar-brand img {
+    width: 50px; /* Este es el ancho que yo decidi darle al logo de la navbar, no hace falta poner el height(altura), se adapta automaticamente segun el ancho, al menos que quiera deformar la imagen y que tenga una altura precisa.*/
+    
+}
+
+/* Boton hacé tu pedido */
+.boton-calltoaction {
+    border-radius: 50px;
+    position: fixed; /* Con el position fixed le decimos que siempre va a estar ahi fijo */
+    bottom: 20px;/* con bottom y rigth definimos su posicion fija*/
+    right: 20px;
+    z-index: 999;/* Con esto decimos que este boton esta encima de todo */
+    animation: titilar 1s ease infinite alternate;/* Creamos una animación llamada "titilar" */
+}
+/* EN boton-calltoaction nosotros creamos una animacion, pero no esta predefinida, eso lo haremos con keyframes
+aca dejo material para leeer sobre keyframes :  https://medium.com/@ignaciods.3108/tutorial-b%C3%A1sico-de-animaciones-en-css-con-keyframes-12f8864f1367#:~:text=Un%20keyframe%20es%20una%20regla,un%20nombre%20a%20la%20animaci%C3%B3n.
+ https://developer.mozilla.org/es/docs/Web/CSS/@keyframes */
+@keyframes titilar {
+    /* Aca le estamos diciendo como que hay 2 estadios con porcentajes, puede haber mas 0% 25% 50% ect */
+    0% {
+        transform: scale(1);/* Tamaño normal */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.536);/* Sombra ligera */
+    }
+    100% {
+        transform: scale(1.1);/* Tamaño escalado */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);/* Sombra mas fuerte */
+    }
+}
+
+.boton-hacerpedido {
+    font-family: 'Now', sans-serif;
+    font-weight: 550;
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    height: 45px;
+    background-color: #FFBD59;
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, opacity 0.3s ease;   
+}
+
+.boton-hacerpedido:hover {
+    background-color: #C18E41;
+    opacity: 0.98;
+}
+
+/* Video Como se hacen nuestras empanadas */
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+ /* Proporción 16:9 para mantener el aspecto del video */
+    overflow: hidden;
+    
+}
+
+.video-foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+
+}
+
+.video-foreground iframe {
+    width: calc(177.77vh); /* Ancho calculado para una relación de aspecto 16:9 */
+    height: 100vh;
+    pointer-events: none; /* Evita que los eventos de clic afecten al reproductor de video */
+}
+
+  /* Oculta los controles del reproductor de video */
+.video-foreground iframe {
+    opacity: 1.4; /* Establece la opacidad para resaltar que es un video incrustado */
+}
+
+/* Seccion empanadas */
+.empanadas-section { /* Esta es una clase que habia creado en html, para llamar clases siempre se debe colocar el "." y luego el nombre de la clase. .empanadas-section: Esta es la clase que se usa para dar estilo a una sección específica de la página web, en este caso, a una sección que muestra las empanadas. */
+    display: flex; /* Esto hace que los elementos dentro de esta sección se coloquen uno al lado del otro en una fila. Es como si estuvieras alineando cosas en una fila. */
+    flex-direction: column; /* Esto indica que los elementos dentro de la sección se apilarán en columnas, en lugar de estar en una fila. Es como si los estuvieras apilando como libros en una estantería */
+    align-items: flex-start; /* Esto controla cómo se alinean los elementos a lo largo del eje principal. En este caso, los elementos se alinearán en el inicio de la columna. Imagina que los estás alineando a la izquierda. */
+    padding: 20px 36px; /* Esto agrega espacio alrededor del contenido dentro de la sección. Imagina que estás añadiendo un poco de espacio en blanco para que no esté todo apretado. */
+    text-align: start; /* Esto controla cómo se alinea el texto dentro de la sección. En este caso, el texto se alineará al principio, lo que es como la alineación a la izquierda. */
+    position: relative; /* Es como mover objetos dentro de su propio espacio sin afectar a los demás elementos en la página. Es como pegar fotos en un póster sin desordenar toda la habitación. */
+    gap: 20px; /* Esto agrega un espacio entre los elementos  para que no se vean tan apretados*/
+}
+
+.titulo-general {
+    font-family: 'Now', sans-serif;
+    font-size: 36px;
+    margin-bottom: 10px; /* es como añadir ese espacio vacío debajo de un elemento. Es el espacio que creas entre el borde inferior de un elemento y el elemento que está debajo. */
+    color: #FFBD59 ; /* Esta propiedad le da color al texto*/
+    font-style: normal; /* Esta propiedad le dice que la tipografia es normal, podria ser italica o bold si quisieramos*/
+    font-weight: 700; /* Esta propiedad le da un peso visual a la tipografia, haciendola mas ancha*/
+    line-height: normal; /* Esta propiedad le da espacio vertical a las palabras de un texto*/
+    padding: 20px 36px; /* Esta propiedad le da un espacio al borde del contenido*/
+}
+
+.espacio-arriba {
+    padding-top: 40px; /* Esta propiedad le da un espacio al borde del contenido pero solo en la parte superior del contenedor, podes invocar otros paddings como left , right , bottom*/
+}
+
+.empanada {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.empanada img {
+    max-width: 100%;/* Esta propieda dice que siempre el ancho de mi imagen va a ser el maximo que pueda ser */
+    height: auto;
+    border-radius: 10px; /* Con esta propieda les agrego un borde de 10 px*/
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Esta propiedad sirve para darle una sombra al contenido, se usa mucho para resaltar que algo esta como por encima del fondo, o dar un efecto mas 3d*/
+}
+
+.empanada p {
+    font-size: 28px;  /* Con esta propieda defino el tamaño de la tipografia de mi parrafo*/
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    margin-top: 10px;
+    position: absolute; /* es como tomar un elemento y decirle: "No te preocupes por los demás, solo ve a ese lugar específico que te estoy indicando". yo le estoy diciendo al texto que vaya dentro de la imagen a un lugar especifico */
+    bottom: 8px; /* con esta propiedad le digo que este a 8px del fondo de la imagen */
+    left: 13px; /* y con esta le digo q este a 13px de la izquierda */
+    color: #fff; /* color al texto*/
+    padding: 5px 10px; /* rellenos*/
+    margin: 0; /*0 margenes*/
+}
+
+/* Sos TEAM pasas de UVA? */
+.team-pasauva{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 36px 0px 36px;
+    gap: 20px;
+}
+.interactivo1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    /* flex-wrap: wrap; */
+}
+
+.img-pasadeuva {
+    width: 100%;
+    border-radius: 10px; 
+}
+
+.pasadeuva {
+    width: 100%;
+}
+
+#formulario-votacion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: center;
+    width: 100%;
+}
+
+.si-no {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.inputmod1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+input[type="radio"] {
+    width: 30px;
+    height: 30px;
+    appearance: none; /* con esta propiedad elimino el stylo que tenia predefinido este input */
+    border: 5px solid #FFBD59;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+    border-color: #FFBD59;
+    background-color: #C18E41; /* Cambia el color del fondo cuando lo selecciono */
+}
+
+
+/* Acerca de Nosotros */
+.acerca-de-nosotros {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 36px;
+    gap: 20px;
+}
+/* Apartir de aca voy a explicar cosas puntuales solamente, aprender html y css es algo que se hace con la practica =) */
+.acerca-de-nosotros img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Marta {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.titulo-empanadas {
+    font-family: 'Now', sans-serif; /* esta es una de las tipografias que insertamos en el head  */
+    font-size: 28px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 400;
+}
+
+.texto-informativo {
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* Donde nos encontras */
+.Donde-nos-encontras {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 36px;
+    gap: 20px;
+}
+
+.info-lugar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.titulo4 {
+    font-family: 'Now', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400 ;
+    line-height: normal;
+}
+
+.titulo5 {
+    color: #C18E41;
+    font-family: 'Now', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.lugar-horario {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.contenedor-mapa {
+    width: 100%;
+}
+
+.mapa {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Seccion Formulario */
+.arriba2 {
+    margin-top: 10px;
+}
+.seccion-formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* con esta propiedad estas centrando contenido de manera horizontal  */
+    padding: 20px 36px;
+    gap: 20px;
+}
+
+.img-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* con esta propiedad estas insertando contenido de manera vertical  */
+    justify-content: center;
+    width:auto;
+    
+}
+
+.img-contenedor img {
+    width:190px;
+}
+
+.contactanos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.p-form {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 50px;
+    border-radius: 4px 4px 0px 0px;   
+}
+
+input {
+    height: 40px;
+}
+
+.p-area {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: auto;
+    border-radius: 4px 4px 0px 0px;
+    padding-bottom: 20px;
+}
+
+textarea {
+    display: flex;
+    height: 100px;
+}
+
+.enviar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 45px;
+    width: 100%;
+    border-radius: 100px;
+    background: #FFBD59;
+    border-style: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.enviar:hover {
+    background-color: #C18E41;
+    opacity: 0.98;
+}
+
+.enviar p {
+    display: inline-block;
+    line-height: 45px;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    color: rgb(255, 255, 255);    
+}
+
+/* Footer */
+
+footer {
+    margin-top: 100px;
+    display: flex;
+    flex-flow: column wrap; 
+    justify-content: center;
+    align-items: center;
+    background: #C18E41;
+    padding: 20px 36px;
+    gap: 20px;
+    width: 100%;
+    position: relative;
+    height: 350px;
+}
+.empanadas-footer {
+    position: absolute;
+    width: 272px ;
+    left: 0px;
+    top: -100px;
+}
+.afooter {
+    text-decoration: none; /*Esta propiedad sirve para eliminar el subrayado que viene por defecto en los "a" (hipervinculos)  */
+}
+
+.footp1 {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Now', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 550;
+    line-height: normal;
+}
+
+.footp2 {
+    color: #FFF;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Javascript */
+
+/* Animaciones de carga para JS */
+.carga-animacion {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.activa {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* POPUP / Ventana emergente para suscribirse */
+#ventanapopup-fondo {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#contenido-popup {
+    font-family: 'Rubik', sans-serif;
+    background-color: white;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: start;
+    position: relative;
+}
+
+#contenido-popup img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#cerrar-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#email-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#boton-suscribir {
+    font-family: 'Now', sans-serif;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 45px;
+    width: 100%;
+    border-radius: 100px;
+    background: #FFBD59;
+    border-style: none;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+#boton-suscribir:hover {
+    background-color: #C18E41;
+    opacity: 0.98;
+}
+
+/* Ventana Emergente del Boton "hacé tu pedido" */
+.ventana-emergente {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 9999;
+    width: 300px;
+}
+
+.ventana-emergente img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.ventana-emergente p {
+    padding-top: 10px;
+    text-align: start;
+}
+
+.boton-aceptar{
+    font-family: 'Now', sans-serif;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 45px;
+    width: 100%;
+    border-radius: 100px;
+    background: #FFBD59;
+    border-style: none;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 768px) {
+    /* Footer */
+    footer {
+        height: none;
+    }
+
+    .empanadas-footer {
+        width: 400px;
+    }
+}
+
+/* En esta seccion vamos a redefinir los estilos para que se adapten en escritorio de pc y quede bien armoniosa la pagina, para esto vamos a escribir @media  y adentro vamos a insertar los pixeles como minimo que va a tener nuestra version desktop*/
+@media (min-width: 1024px) {
+    /* Estilos para el diseño de escritorio, la resolucion minima es 1024*/
+
+    /* Aca solamente vamos a rellamar selectores (los naranjas) que necesitan modificarse por que en escritorio no se ven como queremos que se vean*/
+
+    /* navbar */
+    .navbar-brand img {
+        width: 70px;
+        
+    }
+
+    .navbar-nav a {
+        font-size: 21px;
+    }
+
+    /* Video Como se hacen nuestras empanadas */
+    .video-background {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporción 16:9 para mantener el aspecto del video */
+    overflow: hidden;   
+    }
+    
+    .video-foreground {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .video-foreground iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /* Empanadas */
+    .titulo-general { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .empanadas-section {
+        display: flex;
+        flex-direction: row;   
+        flex-wrap: wrap;    
+        justify-content: center;
+    }
+
+
+    .empanada img {
+        max-width: none;
+        width: 480px;
+        
+    }
+
+    .espacio-arriba {
+        padding-top: 40px;
+    }
+
+    /* Sos TEAM pasas de UVA?  */
+    .interactivo1 {
+        width: 1000px;
+    }
+
+    .votar {
+        align-self: center;
+    }
+
+    .img-pasadeuva {
+        content:  url('/image/pasadeuva\ empa\ desktop.png');
+    }
+
+    /* Acerca de nosotros */
+    .marta-foto1 {
+        content: url('/image/marta\ 2\ desktop.png') ; /* Esta propiedad sirve para cambiar imagenes, yo en mobile quiero que el contenido tenga una imagen, pero en desktop deseo por ejemplo mostrar otro tipo de imagen, bueno esto se puede hacer con esta propiedad  */
+        width: 1000px;      
+    }
+
+    .marta-foto2 {
+        content: url('/image/empanada\ arg\ 1\ desktop.png');
+        width: 1000px;      
+    }
+
+    .Marta{
+        align-items: center;
+        
+    }
+
+    .texto-informativo {
+        width: 1000px;
+    }
+
+    /* Donde nos encontras */
+    .Donde-nos-encontras{
+        display: flex;
+        flex-direction: row;  /* aca estamos diciendole a la propiedad que se nos muestren los elementos en fila  */
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .info-lugar{
+        width: 500px;
+        
+    }
+
+    .contenedor-mapa {
+    width: 500px;
+    }
+
+    .mapa{
+        width: 500px;
+        
+    }
+
+    /* Contactanos */
+    .seccion-formulario {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        padding-bottom: 100px;
+    }
+
+    .img-contenedor img {
+        width:400px;
+    }
+
+    /* Javascript */
+
+    #popup-content {
+    font-size: 24px;
+    font-style: normal;
+    }
+
+    .ventana-emergente {
+        width: 500px;
+    }
+}

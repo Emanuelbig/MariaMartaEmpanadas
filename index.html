@@ -1,0 +1,228 @@
+<!DOCTYPE html> <!-- Escribimos html:5, damos enter y se genera la estructura base en la que trabajaremos -->
+<html lang="es"> <!-- Cambiamos el lenguaje del html a Español para hacer esto en lang="en" cambiamos en por "es" -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Marta Empanadas</title>  <!-- En title ponemos el nombre del proyecto -->
+    <link rel="stylesheet" href="./css/style.css">  <!-- Llamamos la etiqueta link y en href enlazamos nuestro style.css -->
+    <!-- Yo en este trabajo que les estoy mostrando, estoy creando la pagina en base al wireframe que hicimos antes. Pero les quiero mostrar algo que es bastante utilizado. Se llama bootstrap y es como un kit de decoracion que ayuda a crear ciertos componentes con estilos de una manera muy sencilla, todo lo que tenemos que hacer es ir a su pagina https://getbootstrap.com/ y luego ir a una seccion que dice [include via CDN] aca te van a dar una etiqueta llamada link como el de abajo que se pega en el head de este documento y otra etiqueta que se llama script que se pega al final del body, esta etiqueta debe ir siempre a lo ultimo. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> <!-- Llamamos la etiqueta link y en href enlazamos el framework llamado bootstrap -->
+    <link rel="icon" href="./image/MariaMarta favicon.png"> <!-- Para colocar el icono de la empresa que solemos ver en las pestañas de los navegadores se suele llamar la etiqueta link y en el atributo rel="" escribimos dentro icon, luego en href="" llamamos desde nuestra carpeta de imagenes donde esta el logo de la empresa, se recomienda un tamaño de 16x16 píxeles o 32x32 píxeles para esta imagen y que sea en formato png -->
+    <!-- Inyectando fuentes tipograficas en tu html -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Now:wght@300;400;700&family=Rubik:wght@300;400;500&display=swap">
+    <!-- Podes buscar estas fuentes en sitios web como Google Fonts (https://fonts.google.com/), buscas "Now" y "Rubik" en la barra de búsqueda, luego de tener bien elegido lo que necesitas, Google Fonts te dará un fragmento de código que vas a agregar en la sección <head> de tu HTML. Este fragmento de código enlazará las fuentes desde los servidores de Google. -->
+    <!-- Metaetiquetas de posicionamiento -->
+    <meta property="og:title" content="Empanadas de Villa Crespo">
+    <meta property="og:description" content="Llevamos a las mesas de las familias y amigos la magia de las empanadas hechas con amor y cuidado.">
+    <meta property="og:type" content="Pagina Web">
+    <meta property="og:image" content="https://emanuelbig.github.io/MariMartaEmpanadas/image/logonavbar.png">
+    <meta property="og:url" content="">
+    <meta name="twitter:card" content="Maria Marta Empanadas"> 
+    <meta name="twitter:site" content="@MariaMartaEmpanadas">   
+    <!-- Theme color -->   
+    <meta name="theme-color" content="#C18E41"> 
+</head>
+<body>
+    <!-- Vamos a ir a la pagina de bootstrap y en docs/components buscamos una navbar, esta es la barra de navegacion que suele estar arriba de todo en todas las paginas webs, si vamos a usar este kit es importante que le des estilo a todas tus etiquetas mediante clases, por que por defecto bootstrap te setea las etiquetas a corde a su estilo, si vos escribis es css h2 { color: #FFBD59;} no te lo va a tomar -->
+    <nav class="navbar navbar-expand-lg fixed-top"> <!-- Nosotros podemos personalizar esto y dejarla acorde a nuestro diseño, en la clase voy a explicar mas sobre esto chicxs -->
+            <div class="container"> <!-- Este div funciona como un contenedor y ya viene definido con una "a" para colocar el nombre de tu empresa o logo empresarial, por otro lado viene con un "button" que tiene por finalidad hacer que este componente sea responsive, esto no lo vamos a tocar por nada. Luego tenemos otro div adentro de este que contiene varias "a", esto si lo vamos a tocar y vamos a poner el nombre de las secciones más importantes de la página -->
+            <a class="navbar-brand" href="#"><img src="./image/logonavbar.png" alt="Maria Marta"></a> <!-- Adentro de una "a"podemos meter etiquetas como p, img por ej -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto mb-0 mb-lg-0 text-start">
+                    <a class="nav-link active" aria-current="page" href="#empanadas">Empanadas</a> <!-- Como pueden ver escribi "empanadas" dentro del "a", si yo ya tengo creada las secciones de mi pagina, podre ya enlazar estas secciones con la navbar usando el atributo href="#" el numeral es importante ponerlo ylo que se ponga seguido del numero es algo que esta escrito dentro del atributo id="empanadas", en este caso yo tenia por ejemplo una etiqueta semantica "main" que tiene un atributo id, mas adelante lo vamos a poder ver si seguis leyendo el codigo-->
+                    <a class="nav-link active" href="#acercadenosotros">Acerca de nosotros</a>
+                    <a class="nav-link active" href="#dondenos">¿Dónde nos encontras?</a>
+                    <a class="nav-link active" href="#contactos">Contacto</a>
+                    <!-- Acordate la "a" es una etiqueta que se usa para hacer enlaces externos (fuera de la pagina) e internos(dentro de la pagina), en este caso nuestras a son hipervinculos internos -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Ventana emergente -->
+    <div id="ventanapopup-fondo">
+        <div id="contenido-popup">
+            <span id="cerrar-popup">&times;</span>
+            <h2>¡Suscríbete para conocer más de nuestras promociones!</h2>
+            <img src="./image/empanadas_ventanaemergente.png" alt="imagen sobre empanadas ricas">
+            <p>No te pierdas nuestras ofertas exclusivas que enviamos todas las semanas. <br>¡Ingresa tu correo electrónico!</p>
+            <input type="email" placeholder="Correo electrónico" id="email-input">
+            <button id="boton-suscribir">Suscribirse</button>
+        </div>
+    </div>
+    <!-- Boton "hacer pedido" -->
+    <div class="boton-calltoaction">
+        <a href="" target="_blank" class="boton-hacerpedido" >Hacé tu pedido</a>
+    </div>
+    <!-- Ventana Emergente del boton hacer "pedido" -->
+    <div class="ventana-emergente" style="display: none;">
+        <!-- aca en este div use un style como atributo y le dije q no se muestre, esto lo aparecera con js cuando apreto el boton, mas adelante lo veremos -->
+        <h2>Nuestro Delivery no está funcionando actualmente </h2>
+        <img src="./image/error-delivery.png" alt="imagen de error">
+        <p>De todas formas seras recompensado con una docena de empanadas gratis para la próxima!</p>
+        <button class="boton-aceptar">Aceptar</button>
+    </div>
+    <!-- Video sobre empanadas -->
+    <div>
+        <div class="video-background">
+            <div class="video-foreground">
+            <iframe
+                id="youtube-video"
+                src="https://www.youtube.com/embed/Tl-Z_TxpwmQ?autoplay=1&controls=0&mute=1&loop=1&playlist=Tl-Z_TxpwmQ&start=71&end=115"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+                <!-- En el iframe puse un enlace de un video (embed), como no lo tengo en mi carpeta uso iframe en vez de video, genere un atributo allow , en la que le marque una seria de condiciones a mi video, el allowfullscren es para que el video ocupe toda la pantalla -->
+            </div>
+        </div>
+    </div>
+    <!-- Las empanadas de que vendemos -->
+    <main> <!-- Esta es la etiqueta mas importante de mi pagina, va el contenido principal de esta -->
+        <h2 id="empanadas" class="titulo-general espacio-arriba">Nuestras Empanadas</h2> <!-- Este va a ser el titulo de la seccion, aca como mencionaba anteriormente aplique un atributo id para conectarlo con la navbar, cabe mencionar q lo hice en h2, lo podes hacer en cualquier etiqueta. -->
+        <section class="empanadas-section"> <!-- Creamos una seccion que va a contener articulos, son 4 por que hay 4 productos a la venta -->
+            <article class="empanada"> <!-- Dentro de este vamos a llamar las etiquetas img y p -->
+                <img src="./image/carne suave.jpg" alt="Empanada de carne"> <!-- Dentro de este vamos a llamar las etiquetas img y p -->
+                <p>Carne</p>
+            </article>
+            <article class="empanada">
+                <img src="./image/pollook.jpg" alt="Empanada de pollo">
+                <p>Pollo</p>
+            </article>
+            <article class="empanada">
+                <img src="./image/jamon y queso.jpg" alt="Empanada de jamón y queso">
+                <p>Jamón y Queso</p>
+            </article>
+            <article class="empanada">
+                <img src="./image/cebolla y queso.jpg" alt="Empanada de cebolla y queso">
+                <p>Cebolla y Queso</p>
+            </article>
+            <article class="empanada">
+                <img src="./image/humita.jpg" alt="Empanada de humita">
+                <p>Humita</p>
+            </article>
+            <article class="empanada">
+                <img src="./image/espinaca.jpg" alt="Empanada de espinaca">
+                <p>Espinaca</p>
+            </article>
+        </section>
+    </main>
+    <!-- Encuesta sobre pasas de uvas en empanadas -->
+    <section class="carga-animacion">
+        <h2 class="titulo-general">¿Sos Team Pasas de Uva?</h2>
+        <section class="Donde-nos-encontras">
+            <article class="interactivo1">
+                <div>
+                    <p class="texto-informativo">Las empanadas son las protagonistas indiscutibles, pero hay un dilema que nos hace preguntarnos: ¿Deben las pasas de uva ser parte de esta deliciosa tradición? Es un tema que ha desatado apasionadas conversaciones en torno a la mesa, y queremos escuchar <b>TU</b> opinión.
+                    </p>
+                </div>
+                <div class="pasadeuva">
+                    <img class="img-pasadeuva" src="./image/pasadeuva empa mobile.png" alt="imagen de pasas de uva">
+                </div>
+                <h4 class="titulo5 votar">¡Vota ahora y forma parte de la historia de las empanadas! ¿Sos Team Pasas de Uva?</h4>
+                <form id="formulario-votacion">
+                    <div class="si-no">
+                        <label class="titulo5 ">
+                            <input type="radio" name="votar" value="si">
+                        Sí
+                        </label>
+                        <label class="titulo5">
+                        <input type="radio" name="votar" value="no">
+                        No
+                        </label>
+                    </div>
+                    <button class="enviar" type="submit"><p>Votar</p></button>
+                </form>
+                <p id="resultado"></p>
+            </article>
+        </section>
+    </section>
+    <section class="carga-animacion"> <!-- Aca creamos otra seccion ya afuera del main, consideramos que no es lo mas importante, esto es siempre subjetivo y cada uno puede tener su manera de estructurar su pagina, pero esta es una manera correcta -->
+        <h2 id="acercadenosotros" class="titulo-general">Acerca de Nosotros</h2> <!-- El titulo mas importante de la seccion -->
+        <section class="acerca-de-nosotros"> <!-- Creamos una seccion que va a contener otros articulos, ya hablando de la empresa -->
+            <article class="Marta"><!-- En el articulo metemos unos titulos mas chicos, por esto vamos a usar "h3", ponemos una imagen y un parrafo -->
+                <h3 class="titulo-empanadas">¡Bienvenidos a Maria Marta Empanadas Caseras en Villa Crespo!</h3>
+                <img class="marta-foto1" src="./image/MariaMarta-mobile.png" alt="Maria Marta">
+                <p class="texto-informativo">Nuestro viaje comenzó con una simple idea: llevar a las mesas de las familias y amigos la magia de las <b>empanadas hechas con amor y cuidado.</b> Marta, una apasionada cocinera autodidacta, ha perfeccionado con esmero cada receta, garantizando que cada empanada sea un auténtico festín para los sentidos.</p>
+            </article>
+            <article class="Marta">
+                <img class="marta-foto2" src="./image/empanadaargentina-mobile.png" alt="empanadas en Argentina">
+                <p class="texto-informativo">Te invitamos a probar nuestras empanadas caseras y a formar parte de la historia de Marta en Villa Crespo. ¡Esperamos verte pronto y compartir contigo el amor y la pasión que ponemos en cada empanada!</p>
+            </article>
+        </section>
+    </section>
+    <section class="carga-animacion"> <!-- Esta es otra seccion nueva que va a tener datos de donde nos pueden ubicar para comprarnos -->
+        <h2 id="dondenos" class="titulo-general">Dónde nos encontras?</h2>
+        <article class="Donde-nos-encontras"> <!-- En este article podemos ver que estoy usando otros tipos de h para hacer enfasis en titulos mas chicos "h4" y "h5" -->
+            <div class="info-lugar">
+                <h4 class="titulo4">Ven a visitarnos en nuestro encantador local en el corazón de Villa Crespo:</h4>
+                <h5 class="titulo5">Dirección:</h5>
+                <p class="lugar-horario">Calle Malabia 1234, Villa Crespo,Buenos Aires, Argentina</p>
+                <h5 class="titulo5">Horario de Atención:</h5>
+                <p class="lugar-horario">Lunes a Viernes: 10:00 AM - 8:00 PM</p>
+                <p class="lugar-horario">Sábados y Domingos: 11:00 AM - 6:00 PM</p>
+            </div>
+            <div class="contenedor-mapa"> <!-- adentro de este div voy a poner una etiqueta "iframe" en esta voy a insertar un mapa de google con su ubicacion, brevemente te nombro los pasos para hacerlo.  -->
+                <iframe class="mapa" loading="lazy" src="https://www.google.com/maps/embed/v1/place?q=Malabia+1234&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" frameborder="0"></iframe> <!-- 1. Ingresa a Google Maps:
+                    Tenes que ir a la página de Google Maps en tu navegador. Buscas "Google Maps" en el motor de búsqueda y entras en el primer enlace.      
+                    2. Buscas la Ubicación que quieras:
+                    En la barra de búsqueda de Google Maps, escribis la dirección o el nombre del lugar que queres mostrar en el mapa y presionas Enter.
+                    3. Abris el Menú de Compartir:
+                    Una vez que hayas encontrado la ubicación en el mapa, buscas y haces clic en el ícono de "Compartir" que suele ser un ícono de "enlace" con forma de cadena.
+                    4. Seleccionas la Opción "Insertar un Mapa":
+                    Dentro del menú de compartir, buscas la opción que dice "Insertar un mapa". Al hacer clic en esta opción, se te abrirá una ventana emergente con un código HTML.
+                    5. Copias el Código HTML del Mapa:
+                    En la ventana emergente, vas a ver un código HTML que comienza con <iframe>. Debes seleccionar y copiar todo este código.
+                    6. Venis aca a tu html y lo pegas donde lo tengas que usar.  -->
+            </div>
+        </article>
+    </section>
+    <!-- Contactanos -->
+    <section class="carga-animacion"> <!-- Esta es otra seccion nueva que va a estar destinada a la parte de contactarnos -->
+        <h2 id="contactos" class="titulo-general arriba2">Contactanos</h2> <!-- Aca como ven repito cierta estructura que vengo usando, "h2", el "article" con divs -->
+        <article class="seccion-formulario">
+            <div class="img-contenedor">
+                <img src="./image/3-logo-color.png" alt="Maria Marta Empanadas Caseras">
+            </div>
+            <div> <!-- En este div voy a tener 2 contenedores dentro uno que es otro div con un titulo "h4" y otro div que va a contener un form-->
+                <div class="contactanos">
+                    <h4 class="titulo4">Completá tus datos y a la brevedad nos comunicaremos!</h4>
+                </div>
+                <form action="" method="post" id="formulario-contacto"> <!-- Este es un formulario que te permite enviar un mensaje a alguien o a una empresa a través de su sitio web. Aca te nombro lo basico que debe tener un formulario >>>
+                    Nombre: vas a tener que llamar una etiqueta "input" que significa entrada se genera un cuadro donde podes insertar tu nombre por ejemplo (nota yo estoy poniendo los inputs dentro de un p; es valido, esto lo hago por si en algun momento quiero colocarles un titulo a cada input) 
+                    Correo Electrónico: escribis tu dirección de correo electrónico para que puedan responder a tu mensaje por correo.
+                    Número de Teléfono: input donde ponen num de tel.
+                    Mensaje: Aca escribis el mensaje real que queres enviar. Puede ser cualquier cosa que quieras decir.
+                    Botón Enviar: Una vez que hayas llenado tus detalles y escrito tu mensaje, haces clic en este botón para enviarlo. Es como poner tu hoja de papel en un sobre y entregarla. --> 
+                    <p class="p-form">
+                        <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="  Nombre"> <!-- cada input puede tener varios atributos para indicarles su comportamiento el atributo "type" por ejemplo les dice para que sirven, estos que estan nombrados aca son la base, en el "name" siempre es bueno poner la accion con el dato que va, despues esta "required" indica que un campo debe ser completado por el usuario antes de que el formulario pueda ser enviado., si este atributo no esta llamado, los usuarios podran enviar formularios incompletos, despues ta el atributo "placeholder" este si es llenado es la leyenda que va a aparecer adentro de cada input ,esta bueno usarlo para que el usuario entienda para que sirve cada input-->
+                    </p>
+                    <p class="p-form">
+                        <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="  Correo Electrónico">
+                    </p>
+                    <p class="p-form">
+                        <input type="tel" name="introducir_telefono" id="telefono" placeholder="  Número de teléfono">
+                    </p>
+                    <p class="p-area">                     
+                        <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="  Mensaje"></textarea> 
+                    </p>                 
+                    <button class="enviar" type="submit" name="enviar_formulario" ><p>Enviar</p></button> <!-- el "button" es super importante por que va a enviar esta informacion, es importante en su atributo "type" poner submit que significa enviar, aca le estas asignando el proposito del boton. -->   
+                </form>
+            </div>
+        </article>
+    </section>
+    <!-- Footer -->
+    <footer> <!-- El footer es la última sección de tu página web. Es una especie de "pie de página" que contiene información adicional y enlaces relevantes. Pensa en él como el cierre de un libro, donde podes encontrar más detalles o referencias utiles. Podes poner enlaces de navegaciones, redes sociales, informacion de contacto, copyright, informacion legal, enlaces relacionados, Yo para este ejemplo mantengo un footer bastante sencillo con 2 enlaces externos y un parrafo, que tendra copyright y mi marca.  -->
+        <img class="empanadas-footer" src="./image/empanada-criollas.png" alt="empanadas ricas">
+        <a class="afooter" href="https://www.emanuelmoranosole.com/" target="_blank"><p class="footp1">Trabajá con nosotros</p></a> <!-- Este es un enlace externo en su "href" tengo una pagina externa a mi proyecto, si yo quiero que este enlace externo se abra en una pestaña nueva, tendre que llamar al atributo "target" y escribir la clase "_blank", esto hara que al clickear se abra en una pestaña nueva  -->   
+        <a class="afooter" href="https://www.argentina.gob.ar/economia/comercio/leydegondolas/listado-de-proveedores" target="_blank"><p class="footp1">Proveedores</p></a>
+        <p class="footp2">© Copyright 2023 3D Express - Todos los derechos reservados</p>
+    </footer>
+    <!-- Aca esta el script de bootstrap del que hablabamos al principio, siempre debe ir entre el footer y el body -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> <!-- El script funciona como la etiqueta "link" pero solo sirve para agregar un lenguaje de programacion, esto lo veremos mas adelante, cuento es por que bootstrap para tener responsive usa lenguajes que dan interactividad para que esto ocurra-->
+    <!-- Este va a ser el script de nuestro javascript, es como la receta que le va a dar dinamismo a nuestra landing page -->
+    <script src="./js/script.js"></script> <!-- Siempre esta etiqueta va antes del cierre del body, en src="" se coloca la ruta en la que nuestro archivo js se encuentra, se recomienda siempre que este dentro de una carpeta que se llama js o javascript -->
+</body>
+</html>
