@@ -242,7 +242,7 @@ input[type="radio"]:checked {
 
 .titulo-empanadas {
     font-family: 'Now', sans-serif; /* esta es una de las tipografias que insertamos en el head  */
-    font-size: 28px;
+    font-size: 24px;
     font-style: normal;
     line-height: normal;
     font-weight: 400;
@@ -250,7 +250,7 @@ input[type="radio"]:checked {
 
 .texto-informativo {
     font-family: 'Rubik', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
 }
@@ -649,6 +649,14 @@ footer {
     }
 
     /* Acerca de nosotros */
+    .titulo-empanadas {
+        font-size: 28px;
+    }
+    
+    .texto-informativo {
+    font-size: 24px;
+    }
+    
     .marta-foto1 {
         content: url('../image/marta2desktop.png') ; /* Esta propiedad sirve para cambiar imagenes, yo en mobile quiero que el contenido tenga una imagen, pero en desktop deseo por ejemplo mostrar otro tipo de imagen, bueno esto se puede hacer con esta propiedad  */
         width: 1000px;      
