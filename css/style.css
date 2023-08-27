@@ -650,7 +650,7 @@ footer {
 
     /* Acerca de nosotros */
     .marta-foto1 {
-        content: url('/image/marta\ 2\ desktop.png') ; /* Esta propiedad sirve para cambiar imagenes, yo en mobile quiero que el contenido tenga una imagen, pero en desktop deseo por ejemplo mostrar otro tipo de imagen, bueno esto se puede hacer con esta propiedad  */
+        content: url('/image/marta 2 desktop.png') ; /* Esta propiedad sirve para cambiar imagenes, yo en mobile quiero que el contenido tenga una imagen, pero en desktop deseo por ejemplo mostrar otro tipo de imagen, bueno esto se puede hacer con esta propiedad  */
         width: 1000px;      
     }
 
